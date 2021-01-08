@@ -8,6 +8,7 @@ public class Dot {
     private int serialNum;
     private ArrayList<Dot> toOtherDots,fromOtherDots;
     private HashMap<Dot,String> toLinkColor,fromLinkColor;
+    private ArrayList<Dot> availableDots;
 
     public Dot(String color, int serialNum) {
         this.color=color;
@@ -16,6 +17,7 @@ public class Dot {
         this.fromOtherDots = new ArrayList<>();
         this.toLinkColor = new HashMap<>();
         this.fromLinkColor = new HashMap<>();
+        this.availableDots = new ArrayList<>();
     }
 
     public String getColor() {
@@ -64,6 +66,15 @@ public class Dot {
 
     public void setFromLinkColor(HashMap<Dot, String> fromLinkColor) {
         this.fromLinkColor = fromLinkColor;
+    }
+
+    public ArrayList<Dot> getAvailableDots(String color) {
+        for (Dot e:toLinkColor.keySet()) {
+            if(toLinkColor.get(e).equals(color)){
+                availableDots.add(e);
+            }
+        }
+        return availableDots;
     }
 
     @Override

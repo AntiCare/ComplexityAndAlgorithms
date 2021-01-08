@@ -10,7 +10,8 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
 	// write your code here
-        Maze m1= new Maze();
+        Administration admin = new Administration();
+
     }
 
 

@@ -169,6 +169,22 @@ public class Maze {
         System.out.println("D1 can from: "+d1.getFromLinkColor()+" Can  To: "+d1.getToLinkColor());
         System.out.println("D2 can from: "+d2.getFromLinkColor()+" Can  To: "+d2.getToLinkColor());
 
+
     }
 
+    public ArrayList<Dot> getDots() {
+        return dots;
+    }
+
+    public void setDots(ArrayList<Dot> dots) {
+        this.dots = dots;
+    }
+
+    public ArrayList<Link> getLinks() {
+        return links;
+    }
+
+    public void setLinks(ArrayList<Link> links) {
+        this.links = links;
+    }
 }
