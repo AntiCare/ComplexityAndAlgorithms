@@ -18,11 +18,11 @@ public class Administration {
         pawn1 = maze.getDots().get(0);
         pawn2 = maze.getDots().get(1);
         state = new State(pawn1,pawn2);
-        System.out.println(state);
 
+        System.out.println("\nSolution: ");
         List<State> solution  = dfs(state,visited);
-
         System.out.println(solution);
+        System.out.println("success! 999 represents the end dot.");
     }
 
     LinkedList<State> dfs(State start, Set<State> visited) {
@@ -48,8 +48,9 @@ public class Administration {
         return new LinkedList<State>(); /* No solution */
     }
 
-
-
+    /**
+     Determine whether the solution contains end dot(999).
+     */
     private boolean goalIsReached(LinkedList<State> solution) {
         for (State e: solution) {
             if((e.getPawn1Num()==999|| e.getPawn2Num()==999) && solution.contains(e)){
@@ -59,6 +60,9 @@ public class Administration {
         return false;
     }
 
+    /**
+     Determine whether to reach the end dot(999).
+     */
 
     private boolean isGoalState(State start) {
         if (start.getPawn1Num()==999 || start.getPawn2Num()==999){

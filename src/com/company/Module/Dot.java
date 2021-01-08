@@ -6,15 +6,12 @@ import java.util.HashMap;
 public class Dot {
     private String color;
     private int serialNum;
-    private ArrayList<Dot> toOtherDots,fromOtherDots;
     private HashMap<Dot,String> toLinkColor,fromLinkColor;
     private ArrayList<Dot> availableDots;
 
     public Dot(String color, int serialNum) {
         this.color=color;
         this.serialNum = serialNum;
-        this.toOtherDots = new ArrayList<>();
-        this.fromOtherDots = new ArrayList<>();
         this.toLinkColor = new HashMap<>();
         this.fromLinkColor = new HashMap<>();
         this.availableDots = new ArrayList<>();
@@ -36,22 +33,6 @@ public class Dot {
         this.serialNum = serialNum;
     }
 
-    public ArrayList<Dot> getToOtherDots() {
-        return toOtherDots;
-    }
-
-    public void setToOtherDots(ArrayList<Dot> toOtherDots) {
-        this.toOtherDots = toOtherDots;
-    }
-
-    public ArrayList<Dot> getFromOtherDots() {
-        return fromOtherDots;
-    }
-
-    public void setFromOtherDots(ArrayList<Dot> fromOtherDots) {
-        this.fromOtherDots = fromOtherDots;
-    }
-
     public HashMap<Dot, String> getToLinkColor() {
         return toLinkColor;
     }
@@ -68,6 +49,11 @@ public class Dot {
         this.fromLinkColor = fromLinkColor;
     }
 
+    /**
+     * Filter out the available neighbors of one pawn by the color of the other pawn.
+     * @param color the color of other pawn.
+     * @return the arraylist of available neighbors.
+     */
     public ArrayList<Dot> getAvailableDots(String color) {
         for (Dot e:toLinkColor.keySet()) {
             if(toLinkColor.get(e).equals(color)){

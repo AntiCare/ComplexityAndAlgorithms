@@ -32,22 +32,34 @@ public class State {
         this.pawn2 = pawn2;
     }
 
-    public ArrayList<State> getNeighbours(State state) {
 
+    /**
+     * Get the neighbors of the state.
+     * @param state state (pawn1 location , pawn2 location).
+     * @return arraylist (neighbors of the state).
+     */
+    public ArrayList<State> getNeighbours(State state) {
+        /**
+         * s1 gets the first pawn's neighbor.
+         *If the first pawn has neighbors, add the status to neighbors.
+         */
         ArrayList<Dot> s1 = state.getPawn1().getAvailableDots(state.getPawn2().getColor());
             for (Dot e: s1) {
                 State state1 = new State(e,state.pawn2);
                 neighbours.add(state1);
             }
             s1.clear();
-
-            ArrayList<Dot> s2 = state.getPawn2().getAvailableDots(state.getPawn1().getColor());
+        /**
+         * s2 gets the second pawn's neighbor.
+         *If the second pawn has neighbors, add the status to neighbors.
+         */
+        ArrayList<Dot> s2 = state.getPawn2().getAvailableDots(state.getPawn1().getColor());
             for (Dot e: s2) {
                 State state2 = new State(state.pawn1,e);
                 neighbours.add(state2);
             }
             s2.clear();
-            
+
         return  neighbours;
     }
 

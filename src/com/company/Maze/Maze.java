@@ -149,7 +149,6 @@ public class Maze {
         System.out.println("add links done!");
 
         //add the neighbour to each dots
-       System.out.println("finding the neighbour to each dots...");
         for (Dot eDot:dots) {
             for (Link eLink:links) {
                 if(eDot.equals(eLink.getFrom())){
@@ -162,12 +161,7 @@ public class Maze {
                 }
             }
         }
-        System.out.println("finding the neighbour to each dots done!");
 
-//        System.out.println("D1 from: "+d1.getFromOtherDots()+"   To: "+d1.getToOtherDots());
-//        System.out.println("D2 from: "+d2.getFromOtherDots()+"   To: "+d2.getToOtherDots());
-        System.out.println("D1 can from: "+d1.getFromLinkColor()+" Can  To: "+d1.getToLinkColor());
-        System.out.println("D2 can from: "+d2.getFromLinkColor()+" Can  To: "+d2.getToLinkColor());
 
 
     }
