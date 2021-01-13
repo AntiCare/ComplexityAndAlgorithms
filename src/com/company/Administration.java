@@ -10,7 +10,6 @@ public class Administration {
     private Maze maze;
     private Dot pawn1, pawn2;
     private State state;
-    private  ArrayList<Dot> dots;
     private Set<State> visited = new HashSet<>();
 
     public Administration() {
